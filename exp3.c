@@ -1,5 +1,6 @@
-##Count Lines, Words and Characters Using Lex
+
 %{
+    //Count Lines, Words and Characters Using Lex
 #include<stdio.h>
 	int lines = 0, words = 0, chars = 0;
 %}

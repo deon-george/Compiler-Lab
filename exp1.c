@@ -1,4 +1,4 @@
-##Lexical Analyzer Using C
+// Lexical Analyzer Using C
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>

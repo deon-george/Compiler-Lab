@@ -1,5 +1,6 @@
-##Convert abc to ABC in a substring Using Lex
+
 %{
+    //Convert abc to ABC in a substring Using Lex
 #include <stdio.h>
 %}
 
