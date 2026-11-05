@@ -436,14 +436,12 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "armstrong.l"
-#line 2 "armstrong.l"
+#line 1 "fibonacci.l"
+#line 2 "fibonacci.l"
     #include<stdio.h>
-    #include<math.h>
-    int rem=0, n, temp=0, sum=0;
-    int digit=0;
-#line 445 "lex.yy.c"
-#line 446 "lex.yy.c"
+    int a=0, b=1, c=0;
+#line 443 "lex.yy.c"
+#line 444 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -660,9 +658,9 @@ YY_DECL
 		}
 
 	{
-#line 8 "armstrong.l"
+#line 6 "fibonacci.l"
 
-#line 665 "lex.yy.c"
+#line 663 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -721,10 +719,10 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 9 "armstrong.l"
+#line 7 "fibonacci.l"
 ECHO;
 	YY_BREAK
-#line 727 "lex.yy.c"
+#line 725 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1729,38 +1727,24 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 9 "armstrong.l"
-
+#line 7 "fibonacci.l"
 
 int yywrap(){
     return 1;
 }
-
 int main(){
-    printf("enter the number\n");
+    int n;
+    printf("enter the limit\n");
     scanf("%d",&n);
 
-    temp=n;
-    while(temp>0){
-        digit++;
-        temp=temp/10;
+    for (int i=0; i<=n; i++){
+        printf("%d\t",a);
+        
+        c=a+b;
+        a=b;
+        b=c;
+       
     }
-    temp=n;
-    while(temp>0){
-        rem=temp%10;
-        sum = sum + pow(rem, digit);
-        temp = temp/10;
-
-    }
-    if(n==sum){
-        printf("%d is an armstrong number\n",n);
-    }
-    else{
-        printf("%d is not an armstrong number\n",n);
-    }
-
+    printf("\n");
     return 0;
-
-
 }
-

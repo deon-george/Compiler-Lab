@@ -15,9 +15,12 @@ int main(){
 
     for (int i=0; i<=n; i++){
         printf("%d\t",a);
+        
+        c=a+b;
         a=b;
         b=c;
-        c=a+b;
+       
     }
+    printf("\n");
     return 0;
 }
