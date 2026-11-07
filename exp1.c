@@ -4,7 +4,7 @@
 
 int main(){
 FILE *fp = fopen("input.txt", "r");
-char token[100];
+
 int ch, i = 0;
 
 
@@ -15,10 +15,10 @@ int ch, i = 0;
     printf("main : identifier\n");
     printf("10 : Number\n");
     printf("int : Keyword\n");
-    printf("a : identifier\n");
+    printf("a : identifier\n"); 
 
     
-    printf(" ");
+    
     
 
     while ((ch = fgetc(fp)) != EOF) 

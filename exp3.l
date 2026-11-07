@@ -4,10 +4,10 @@ int lines=0, words=0, chars=0;
 %}
 
 %%
-[\t]+ 		{chars+=yyleng;}
-\n		{lines++; chars++;}
+[\t]+ 		    {chars+=yyleng;}
+\n		        {lines++; chars++;}
 [a-zA-Z0-9]+	{chars+=yyleng; words++;}
-.		{chars++;}
+.		          {chars++;}
 %%
 
 int yywrap()
