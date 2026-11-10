@@ -441,11 +441,14 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "exp6.l"
-#line 2 "exp6.l"
+#line 1 "exp8.l"
+#line 3 "exp8.l"
 #include "y.tab.h"
-#line 447 "lex.yy.c"
-#line 448 "lex.yy.c"
+#include <stdlib.h>
+
+extern int yylval;
+#line 450 "lex.yy.c"
+#line 451 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -662,10 +665,10 @@ YY_DECL
 		}
 
 	{
-#line 5 "exp6.l"
+#line 9 "exp8.l"
 
 
-#line 668 "lex.yy.c"
+#line 671 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -724,36 +727,39 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 7 "exp6.l"
-{ return DIGIT; }
+#line 11 "exp8.l"
+{
+                         yylval = atoi(yytext);
+                         return DIGIT;
+                        }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 9 "exp6.l"
+#line 16 "exp8.l"
 { return ID; }
 	YY_BREAK
 case 3:
 /* rule 3 can match eol */
 YY_RULE_SETUP
-#line 11 "exp6.l"
+#line 18 "exp8.l"
 { return NL; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 13 "exp6.l"
+#line 20 "exp8.l"
 ;
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 15 "exp6.l"
+#line 22 "exp8.l"
 { return yytext[0]; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 17 "exp6.l"
+#line 24 "exp8.l"
 ECHO;
 	YY_BREAK
-#line 756 "lex.yy.c"
+#line 762 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1758,10 +1764,11 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 17 "exp6.l"
+#line 24 "exp8.l"
 
 
 int yywrap()
 {
     return 1;
 }
+

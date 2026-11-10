@@ -20,13 +20,10 @@
 
 #define YYPURE 0
 
-#line 2 "exp6.y"
+#line 2 "exp8.y"
 #include <stdio.h>
 #include <stdlib.h>
-
-int yylex();
-int yyerror(char *s);
-#line 30 "y.tab.c"
+#line 27 "y.tab.c"
 
 #if ! defined(YYSTYPE) && ! defined(YYSTYPE_IS_DECLARED)
 /* Default: YYSTYPE is the semantic value type. */
@@ -75,45 +72,45 @@ extern int YYPARSE_DECL();
 #define YYERRCODE 256
 typedef int YYINT;
 static const YYINT yylhs[] = {                           -1,
-    0,    1,    1,    1,    1,    1,    1,
+    0,    1,    1,    1,    1,    1,
 };
 static const YYINT yylen[] = {                            2,
-    2,    3,    3,    3,    3,    1,    1,
+    2,    3,    3,    3,    3,    1,
 };
 static const YYINT yydefred[] = {                         0,
-    6,    7,    0,    0,    1,    0,    0,    0,    0,    0,
-    0,    4,    5,
+    6,    0,    0,    1,    0,    0,    0,    0,    0,    0,
+    4,    5,
 };
 #if defined(YYDESTRUCT_CALL) || defined(YYSTYPE_TOSTRING)
 static const YYINT yystos[] = {                           0,
-  257,  258,  261,  262,  259,   43,   45,   42,   47,  262,
-  262,  262,  262,
+  257,  261,  262,  259,   43,   45,   42,   47,  262,  262,
+  262,  262,
 };
 #endif /* YYDESTRUCT_CALL || YYSTYPE_TOSTRING */
-static const YYINT yydgoto[] = {                          3,
-    4,
+static const YYINT yydgoto[] = {                          2,
+    3,
 };
 static const YYINT yysindex[] = {                      -248,
-    0,    0,    0,  -42,    0, -248, -248, -248, -248,  -35,
-  -35,    0,    0,
+    0,    0,  -42,    0, -248, -248, -248, -248,  -35,  -35,
+    0,    0,
 };
 static const YYINT yyrindex[] = {                         0,
-    0,    0,    0,    0,    0,    0,    0,    0,    0,  -41,
-  -37,    0,    0,
+    0,    0,    0,    0,    0,    0,    0,    0,  -41,  -37,
+    0,    0,
 };
 #if YYBTYACC
 static const YYINT yycindex[] = {                         0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,
+    0,    0,
 };
 #endif
 static const YYINT yygindex[] = {                         0,
-    7,
+    8,
 };
 #define YYTABLESIZE 222
-static const YYINT yytable[] = {                          8,
-    6,    2,    7,    2,    9,    3,    8,    3,    1,    2,
-    0,    9,   10,   11,   12,   13,    0,    0,    0,    0,
+static const YYINT yytable[] = {                          7,
+    5,    2,    6,    2,    8,    3,    7,    3,    1,    0,
+    0,    8,    9,   10,   11,   12,    0,    0,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
@@ -133,12 +130,12 @@ static const YYINT yytable[] = {                          8,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
     0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-    0,    0,    0,    0,    0,    0,    5,    2,    0,    0,
+    0,    0,    0,    0,    0,    0,    4,    2,    0,    0,
     0,    3,
 };
 static const YYINT yycheck[] = {                         42,
-   43,   43,   45,   45,   47,   43,   42,   45,  257,  258,
-   -1,   47,    6,    7,    8,    9,   -1,   -1,   -1,   -1,
+   43,   43,   45,   45,   47,   43,   42,   45,  257,   -1,
+   -1,   47,    5,    6,    7,    8,   -1,   -1,   -1,   -1,
    -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
    -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
    -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,   -1,
@@ -188,7 +185,7 @@ static const YYINT yyctable[] = {                        -1,
    -1,
 };
 #endif
-#define YYFINAL 3
+#define YYFINAL 2
 #ifndef YYDEBUG
 #define YYDEBUG 0
 #endif
@@ -228,7 +225,6 @@ static const char *const yyrule[] = {
 "exp : exp '*' exp",
 "exp : exp '/' exp",
 "exp : DIGIT",
-"exp : ID",
 
 };
 #endif
@@ -360,21 +356,21 @@ static YYINT  *yylexp = NULL;
 
 static YYINT  *yylexemes = NULL;
 #endif /* YYBTYACC */
-#line 32 "exp6.y"
+#line 48 "exp8.y"
 
 int main()
 {
-    printf("Enter an expression: ");
+    printf("Enter an arithmetic expression: ");
     yyparse();
     return 0;
 }
 
 int yyerror(char *s)
 {
-    printf("Invalid Expression\n");
+    printf("Invalid: %s\n", s);
     return 0;
 }
-#line 378 "y.tab.c"
+#line 374 "y.tab.c"
 
 /* For use in generated program */
 #define yydepth (int)(yystack.s_mark - yystack.s_base)
@@ -1045,14 +1041,54 @@ yyreduce:
     switch (yyn)
     {
 case 1:
-#line 17 "exp6.y"
+#line 14 "exp8.y"
 	{
-         printf("Valid Expression\n");
-         return 0;
+         printf("Result = %d\n", yystack.l_mark[-1]);
      }
-#line 1054 "y.tab.c"
+#line 1049 "y.tab.c"
 break;
+case 2:
+#line 20 "exp8.y"
+	{
+         yyval = yystack.l_mark[-2] + yystack.l_mark[0];
+     }
 #line 1056 "y.tab.c"
+break;
+case 3:
+#line 24 "exp8.y"
+	{
+         yyval = yystack.l_mark[-2] - yystack.l_mark[0];
+     }
+#line 1063 "y.tab.c"
+break;
+case 4:
+#line 28 "exp8.y"
+	{
+         yyval = yystack.l_mark[-2] * yystack.l_mark[0];
+     }
+#line 1070 "y.tab.c"
+break;
+case 5:
+#line 32 "exp8.y"
+	{
+         if (yystack.l_mark[0] == 0)
+         {
+             yyerror("Division by zero");
+             YYABORT;
+         }
+         else
+             yyval = yystack.l_mark[-2] / yystack.l_mark[0];
+     }
+#line 1083 "y.tab.c"
+break;
+case 6:
+#line 42 "exp8.y"
+	{
+         yyval = yystack.l_mark[0];
+     }
+#line 1090 "y.tab.c"
+break;
+#line 1092 "y.tab.c"
     default:
         break;
     }
